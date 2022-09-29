@@ -9,4 +9,22 @@ while True:
         print("Some input could not be converted to a number!")
     else:
         break
-print(numbers)
+
+for i in range(0, len(numbers) - 1):
+    for j in range(len(numbers) - 1):
+        if(numbers[j] > numbers[j+1]):
+            temp = numbers[j]
+            numbers[j] = numbers[j+1]
+            numbers[j+1] = temp
+
+
+
+median = 0
+
+if len(numbers) == 1:
+    median = numbers[0]
+elif len(numbers) % 2 == 0:
+    median = (numbers[(len(numbers) // 2) - 1] + numbers[(len(numbers) // 2)]) / 2
+else:
+    median = numbers[(len(numbers)) // 2]
+print(median)
